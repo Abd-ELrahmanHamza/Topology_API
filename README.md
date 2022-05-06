@@ -27,6 +27,36 @@ Provide the functionality to access, manage and store device topologies.
 
 ## Getting Started
 
+### Classes
+#### MainClass
+
+* This class contains the main function you need to run the API
+* It creates an object from Topologies and call its functions
+
+#### Topologies
+
+Consists of Topologies
+
+* This class contains the functions of the API :-
+  * void readJSON(String fileName)
+  * void writeJSON(String topologyID)
+  * Set<String> getTopologies()
+  * boolean deleteTopology(String topologyID)
+  * List<Component> queryDevices(String topologyID)
+  * List<Component> queryDevicesWithNetlistNode(String topologyID, String node)
+
+#### Topology
+
+Each topology consists of components and the JSON format of the topology
+
+#### Component
+
+Each component contains the ID and type of the component (Maybe extended if required)
+
+#### Testing
+
+This class tests each function of class Topologies
+
 ### Dependencies
 
 * Java
@@ -35,7 +65,7 @@ Provide the functionality to access, manage and store device topologies.
 ### Installing
 
 ```
-git clone https://github.com/Abd-ELrahmanHamza/Function_plotter 
+git clone https://github.com/Abd-ELrahmanHamza/Topology_API 
 ```
 
 ### Screenshots
