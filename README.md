@@ -62,6 +62,8 @@ git clone https://github.com/Abd-ELrahmanHamza/Function_plotter
 #### Query devices with netlist node then exit
 ![start](screenshots/8.png)
 
+#### Testing
+![start](screenshots/9.png)
 
 ## Contributors
 
