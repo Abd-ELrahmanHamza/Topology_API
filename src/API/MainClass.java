@@ -37,6 +37,7 @@ public class MainClass {
                 default -> System.out.println("Invalid input");
             }
         }
+
     }
 
     private static void readJSONChoice() {
