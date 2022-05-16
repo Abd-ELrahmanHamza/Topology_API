@@ -30,7 +30,7 @@ public class Topologies {
             JSONObject obj = (JSONObject) jsonParser.parse(reader);
             addToTopologies(obj);
         } catch (IOException | ParseException e) {
-            throw new RuntimeException(e);
+            System.out.println("File not exist");
         }
     }
 
@@ -43,10 +43,10 @@ public class Topologies {
 
         } catch (IOException e) {
             System.out.println("Error in IO");
-            e.printStackTrace();
-        } catch (NullPointerException e){
+            //e.printStackTrace();
+        } catch (NullPointerException e) {
             System.out.println("Key not found");
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 
@@ -63,11 +63,20 @@ public class Topologies {
     }
 
     public List<Component> queryDevices(String topologyID) {
+        if (topologiesJSON.get(topologyID) == null) {
+            System.out.println("Not Found");
+            return new ArrayList<Component>();
+        }
+        List<Component> l = topologiesJSON.get(topologyID).getComponents();
         return topologiesJSON.get(topologyID).getComponents();
     }
 
     public List<Component> queryDevicesWithNetlistNode(String topologyID, String node) {
-        System.out.println(topologiesJSON.get(topologyID).getNodes());
+//        System.out.println(topologiesJSON.get(topologyID).getNodes());
+        if(topologiesJSON.get(topologyID) == null){
+            System.out.println("Topology not found");
+            return new ArrayList<>();
+        }
         return topologiesJSON.get(topologyID).getNodes().get(node);
     }
 }
